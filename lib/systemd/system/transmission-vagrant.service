@@ -1,0 +1,13 @@
+[Unit]
+Description=Transmission BitTorrent Daemon
+After=network.target
+
+[Service]
+Type=notify
+ExecStartPre=/bin/sh -c 'until mountpoint ~VAGRANT_USER/Downloads >/dev/null; do sleep 1; done'
+ExecStart=/usr/bin/transmission-daemon -f --log-error --config-dir /home/VAGRANT_USER/daemon
+ExecReload=/bin/kill -s HUP $MAINPID
+User=VAGRANT_USER
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+startxfce4 &
+xfce4-terminal -x start-openvpn.sh &
+transmission-qt &
+
+wait

@@ -1,0 +1,8 @@
+[Unit]
+Description=VNC X desktop for the Vagrant user
+Before=xstartup-vagrant.service
+Wants=xstartup-vagrant.service
+
+[Service]
+ExecStart=/usr/lib/xorg/Xorg -noreset +extension GLX +extension RANDR +extension RENDER -logfile /home/VAGRANT_USER/.xorg.log -config /etc/X11/xorg-dummy.conf :10
+User=VAGRANT_USER

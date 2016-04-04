@@ -1,0 +1,12 @@
+[Unit]
+Description=VNC server for the Vagrant user
+After=xorg-vagrant.service
+Requires=xorg-vagrant.service
+
+[Service]
+Environment=DISPLAY=:10
+ExecStart=/usr/bin/x11vnc -many -shared -xrandr -rfbport 5901 -nopw
+User=VAGRANT_USER
+
+[Install]
+WantedBy=multi-user.target

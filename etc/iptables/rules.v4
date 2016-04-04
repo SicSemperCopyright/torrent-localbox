@@ -1,0 +1,8 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -i tun+ -p tcp -m multiport --dports 22,5901,9091 -j DROP
+-A OUTPUT -d 10.0.0.0/8 -j ACCEPT
+-A OUTPUT -o eth+ -m owner --uid-owner 1000 -j REJECT --reject-with icmp-port-unreachable
+COMMIT

@@ -1,0 +1,7 @@
+[Unit]
+Description=VNC X startup
+
+[Service]
+Environment=DISPLAY=:10
+ExecStart=/home/VAGRANT_USER/.vnc/xstartup
+User=VAGRANT_USER
