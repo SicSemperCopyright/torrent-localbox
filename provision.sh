@@ -39,6 +39,7 @@ sudo systemctl enable x11vnc-vagrant
 install_system /usr/local/bin/start-openvpn.sh 0755
 
 sudo systemctl disable transmission-daemon
+sudo systemctl stop transmission-daemon
 install_system /lib/systemd/system/transmission-vagrant.service
 install_user daemon/settings.json
 sudo systemctl enable transmission-vagrant
