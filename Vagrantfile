@@ -2,7 +2,7 @@ Vagrant.configure(2) do |config|
   #config.vm.box = "gbarbieru/xenial"
 
   # With the official cloud image, you must first run: vagrant plugin install vagrant-vbguest
-  config.vm.box = "https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box"
+  config.vm.box = "ubuntu/xenial64"
 
   config.vm.network "forwarded_port", guest: 5901, host: 5901, host_ip: "127.0.0.1", auto_correct: true
   config.vm.network "forwarded_port", guest: 9091, host: 9091, host_ip: "127.0.0.1", auto_correct: true
