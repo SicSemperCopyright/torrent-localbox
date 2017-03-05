@@ -15,6 +15,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
     xserver-xorg-video-dummy \
     xubuntu-desktop
 
+sudo DEBIAN_FRONTEND=noninteractive apt-get remove -y transmission-gtk
+
 install_system() {
     printf "Installing system file: %s\n" "$1"
     sudo install -D -m "${2:-0644}" "/vagrant$1" "$1"
